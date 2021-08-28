@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.edson.cursoSpring.exceptions.AuthorizationException;
-import br.com.edson.cursoSpring.exceptions.BusinessException;
 import br.com.edson.cursoSpring.exceptions.ObjectNotFound;
 import br.com.edson.cursoSpring.model.Cliente;
 import br.com.edson.cursoSpring.model.Endereco;
@@ -26,6 +25,7 @@ import br.com.edson.cursoSpring.model.Pedido;
 import br.com.edson.cursoSpring.model.Produto;
 import br.com.edson.cursoSpring.model.dto.ItensDTO;
 import br.com.edson.cursoSpring.model.dto.PedidoDTO;
+import br.com.edson.cursoSpring.model.dto.PedidoDTOOut;
 import br.com.edson.cursoSpring.model.enums.EstadoPagamento;
 import br.com.edson.cursoSpring.model.enums.StatusPedidoEnum;
 import br.com.edson.cursoSpring.repositories.ClienteRepository;
@@ -138,6 +138,9 @@ public class PedidoService {
 		return valorTotal;
 	}
 
+	public List<PedidoDTOOut> listar(){
+		return this.pedidoRepository.listarPedido();
+	}
 		
 	
 	

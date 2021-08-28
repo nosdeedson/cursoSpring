@@ -57,5 +57,10 @@ public class PedidoResource {
 		HashMap<String, Double> valorTotal = pedidoServico.valorTotalPedido(clienteId, pedidoId);
 		return ResponseEntity.ok(valorTotal);
 	}
+	
+	@GetMapping("sem-paginacao")
+	public ResponseEntity<?> listar() {
+		return ResponseEntity.ok(this.pedidoServico.listar());
+	}
 
 }

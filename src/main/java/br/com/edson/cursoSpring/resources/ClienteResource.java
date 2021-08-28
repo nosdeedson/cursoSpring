@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
-import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -22,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import com.amazonaws.services.codeartifact.model.HashAlgorithm;
 
 import br.com.edson.cursoSpring.exceptions.CPF_Ou_CNPJUtilizado;
 import br.com.edson.cursoSpring.exceptions.EmailUtilizado;

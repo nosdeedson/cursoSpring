@@ -11,6 +11,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -50,7 +51,7 @@ public class Pedido implements Serializable {
 	private Pagamento pagamento;
 	
 	
-	@OneToMany(mappedBy = "id.pedido")
+	@OneToMany(mappedBy = "id.pedido", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<ItemPedido> itens = new HashSet<>();
 	
 	private boolean deletado;

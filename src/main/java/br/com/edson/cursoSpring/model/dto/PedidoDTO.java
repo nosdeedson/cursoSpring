@@ -22,6 +22,18 @@ public class PedidoDTO {
 	private List<ItensDTO> itens = new ArrayList<>();
 	
 	public PedidoDTO() {}
+	
+
+	public PedidoDTO( Integer clienteId, Integer enderecoEntregaId, Integer numeroParcelas,
+			String tipoPagamento, List<ItensDTO> itens) {
+		super();
+		this.clienteId = clienteId;
+		this.enderecoEntregaId = enderecoEntregaId;
+		this.numeroParcelas = numeroParcelas;
+		this.tipoPagamento = tipoPagamento;
+		this.itens = itens;
+	}
+
 
 	public Integer getClienteId() {
 		return clienteId;

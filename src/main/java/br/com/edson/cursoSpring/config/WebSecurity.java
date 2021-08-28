@@ -54,7 +54,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	
 	private static final String[] PUBLIC_MATCHERS = {
 			"/",
-			"/h2-console/**"
+			"/h2-console/**",
+			"/swagger-ui.html"
 		};
 	
 	@Override

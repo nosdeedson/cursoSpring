@@ -1,14 +1,17 @@
 package br.com.edson.cursoSpring.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
+import br.com.edson.cursoSpring.model.ItemPedido;
 import br.com.edson.cursoSpring.model.Pedido;
+import br.com.edson.cursoSpring.model.dto.PedidoDTOOut;
 
 public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
 	
@@ -23,7 +26,19 @@ public interface PedidoRepository extends JpaRepository<Pedido, Integer> {
 	
 	Page<Pedido> findByCliente_Id( @Param("clienteId") Integer clienteId, @Param("pageRequest") Pageable pageRequest );
 
+	@Query(" SELECT new br.com.edson.cursoSpring.model.dto.PedidoDTOOut("
+			+ " p.cliente.nome,"
+			+ "	p.cliente.cpfOuCnpj,"
+			+ " p.instante, "
+			+ " p.itens"
+			+ " )"
+			+ " FROM Pedido p "
+			+ " INNER JOIN ItemPedido ip "
+			+ " ON ip.id.pedido = p")
+//	@Query( " SELECT p.itens from Pedido p")
+	List<PedidoDTOOut> listarPedido();
 }
+
 
 
 
