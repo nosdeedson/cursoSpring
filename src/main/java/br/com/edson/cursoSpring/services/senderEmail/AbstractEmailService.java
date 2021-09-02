@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import br.com.edson.cursoSpring.model.Cliente;
 import br.com.edson.cursoSpring.model.Pedido;
 
 

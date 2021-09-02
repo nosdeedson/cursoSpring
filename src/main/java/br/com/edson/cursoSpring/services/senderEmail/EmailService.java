@@ -4,7 +4,6 @@ import javax.mail.internet.MimeMessage;
 
 import org.springframework.mail.SimpleMailMessage;
 
-import br.com.edson.cursoSpring.model.Cliente;
 import br.com.edson.cursoSpring.model.Pedido;
 
 public interface EmailService {

@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import br.com.edson.cursoSpring.model.ItemPedido;
 import br.com.edson.cursoSpring.model.Pedido;
 import br.com.edson.cursoSpring.model.dto.PedidoDTOOut;
 

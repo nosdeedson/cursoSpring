@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+:root{
+    --header-width: 100px;
+    --footer-width: 70px;
+    --header-logo: 200px;
+    --shadow: 
+        0 2px 23px 0 rgba(65, 43, 43, 0.534),
+        0 2px 49px 0 rgba(0, 0, 0, 0.829);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.home{
+    height: 95%;
+    width: 95%;
+    box-shadow: var(--shadow);
+}
+
+.altura{
+    position: relative;
+    top: 30%;
+}
+
+@media screen {
+    .page{
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 
+            var(--header-width)
+            1fr
+            var(--footer-width);
+        grid-template-areas: 
+            "header"
+            "content"
+            "footer";
+        height: 100vh;
+    }
+    .header{
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 
+            var(--header-logo) 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo apresentation";
+    }
+    
+    .content{
+        grid-area: content;
+    }
+
+    .footer{
+        grid-area: footer;
+    }
+}
+
+@media (max-width: 576px) {
+    .header{
+        display: grid;
+        grid-template-columns: 
+            1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "logo logo"
+            "apresentation apresentation";
+    }
+    .logo{
+        grid-area: logo;
+    }
+    .apresentation{
+        grid-area: apresentation;
+    }
+}
+</style>
+<body class="page">
+    <header class="header bg-dark text-light">
+        <div class="logo">
+        </div>
+        <div class="bg-dark apresentation">
+            <div class="col-12 col-sm-9 text-center mt-2">
+                <h2 style="font-family: 'Libre Baskerville', serif;" class="" id="ejs">Edson Jose de Souza</h2>
+                <h4 style="font-family: 'Libre Baskerville', serif;" class="" id="sisInfo">
+                    Bacharel em Sistemas de Informação
+                </h4>
+            </div>
+        </div>
+    </header>
+    <main class="content bg-ligth d-flex justify-content-center" >
+        <div class="home bg-white my-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                        <article class="text-center altura" >
+                            <h1 style="font-family: roboto; color: black;" class="display-4" >API desenvolvida no curso Spring Boot e Ionic</h1>
+                            <br/>
+                            <p class="display-5">Esta página foi criada porque para o deploy no HEROKU é necessário uma página home</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer bg-secondary text-dark">
+        <div class="col-12 d-flex justify-content-center">
+            <h1 style="font-family: 'Libre Baskerville', serif;" class="display-5" id="ejs">&#169;EJS</h2>
+        </div>
+    </footer>
+</body>
+</html>
